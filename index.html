@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>coffeerun</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body class="container">
+    <header>
+        <h1>CoffeeRun</h1>
+    </header>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Achievements</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You have received an achievement for drinking the most INTENSE coffee and great Flavor</p>
+                    <p class="text-warning">Would you like to use your achievement?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="deny-achievement">No</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="confirm-achievement">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form data-coffee-order="form">
+                    <div class="form-group">
+                        <label for="coffeeOrder">Coffee Order</label>
+                        <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com">
+                    </div>
+                    <div class="radio">
+                        <label>
+                        <input type="radio" name="size" value="short">
+                        Short
+                      </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                        <input type="radio" name="size" value="tall" checked>
+                        Tall
+                      </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                        <input type="radio" name="size" value="grande">
+                        Grande
+                      </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                        <input type="radio" name="size" value="coffee-zilla">
+                        Coffee-Zilla
+                      </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="flavorShort">Flavor Shot</label>
+                        <select id="flavorShort" class="form-control" name="flavor">
+                        <option value="">None</option>
+                        <option value="Caramel">Caramel</option>
+                        <option value="Almond">Almond</option>
+                        <option value="Mocha">Mocha</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="strengthLevelLabel">Caffeine Rating</label>
+                        <label for="strengthLevel"></label>
+                        <input name="strength" id="strengthLevel" type="range" value="30">
+                    </div>
+                    <div class="hidden" id="achievementsOptions">
+                        <h4>Achievement Options</h4>
+                        <div class="form-check">
+                            <label>
+                        <input type="checkbox" value="time-travel" name="achievement">
+                        Time Travel
+                      </label>
+                        </div>
+                        <div class="form-check">
+                            <label>
+                        <input type="checkbox" value="mind-reading" name="achievement">
+                        Mind Reading
+                      </label>
+                        </div>
+                        <div class="form-check">
+                            <label>
+                        <input type="checkbox" value="bug-free" name="achievement">
+                        Bug Free Code
+                      </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Pending Orders:</h4>
+                <div data-coffee-order="checklist">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/checklist.js" charset="utf-8"></script>
+    <script src="scripts/validation.js" charset="utf-8"></script>
+    <script src="scripts/achievement.js" charset="utf-8"></script>
+    <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+
+</html>
