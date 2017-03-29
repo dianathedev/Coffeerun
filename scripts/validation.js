@@ -1,38 +1,37 @@
 (function(window) {
-        'use strict';
-        var App = window.App || {};
-        var $ = window.jQuery;
+    'use strict';
+    var App = window.App || {};
+    var $ = window.jQuery;
 
-        var Validation = {
-            isCompanyEmail: function(email) {
-                return /.@bignerdranch\.com$/.test(email);
-            },
+    var Validation = {
+        isCompanyEmail: function(email) {
+            return /.@bignerdranch\.com$/.test(email);
+        },
 
-            isValidEmail: function(email, remoteDS) {
-                App.validEmail = true;
-                return remoteDS.get(email, function (serverResponse) {
-                    if (serverResponse === null) {
-                        App.validEmail = true;
-                    }
-                    else {
-                        if (serverResponse.emailAddress === email) {
-                            App.validEmail = false;
-                        }
-                    }
-                });
-            },
-
-            isDecaf: function(coffee, strength) {
-                if (/decaf/.test(coffee) && strength > 20) {
-
-                    return false;
+        isValidEmail: function(email, remoteDS) {
+            App.validEmail = true;
+            return remoteDS.get(email, function(serverResponse) {
+                if (serverResponse === null) {
+                    App.validEmail = true;
                 } else {
-
-                    return true;
+                    if (serverResponse.emailAddress === email) {
+                        App.validEmail = false;
+                    }
                 }
-            }
-        };
+            });
+        },
 
-            App.Validation = Validation;
-            window.App = App;
-        })(window);
+        isDecaf: function(coffee, strength) {
+            if (/decaf/.test(coffee) && strength > 20) {
+
+                return false;
+            } else {
+
+                return true;
+            }
+        }
+    };
+
+    App.Validation = Validation;
+    window.App = App;
+})(window);

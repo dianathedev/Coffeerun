@@ -7,7 +7,6 @@
         if (!url) {
             throw new Error('No remote URL supplied.');
         }
-
         this.serverUrl = url;
     }
 
