@@ -49,27 +49,28 @@
             var message = '';
             if (fn(emailAddress)) {
                 event.target.setCustomValidity('');
+
+                var SERVER_URL = 'http://localhost:3002/coffeeorders';
+                $.get(SERVER_URL, function(serverResponse) {
+                    var emailList = [];
+                    for (var i in serverResponse){
+                        emailList.push(serverResponse[i].emailAddress);
+                    }
+                    if(emailList.indexOf(emailAddress) != -1)
+                    {
+                        message = emailAddress + ' already has an order!';
+                        console.log(message);
+                        event.target.setCustomValidity(message);
+                    }
+                    else {
+                        event.target.setCustomValidity('');
+                    }
+                });
+
             } else {
                 message = emailAddress + ' is not an authorized email address!';
                 event.target.setCustomValidity(message);
             }
-        });
-    };
-
-    FormHandler.prototype.addEmailInputHandler = function (fn, remoteDS) {
-        this.$formElement.on('blur', '[name="emailAddress"]', function (event) {
-            var emailAddress = event.target.value;
-            var message = '';
-            fn(emailAddress, remoteDS)
-            .then(function () {
-                if (App.validEmail) {
-                    event.target.setCustomValidity('');
-                } else {
-                    message = emailAddress + ' already has an order!';
-                    console.log(message);
-                    event.target.setCustomValidity(message);
-                }
-            });
         });
     };
 

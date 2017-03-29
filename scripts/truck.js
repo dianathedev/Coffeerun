@@ -22,7 +22,7 @@
             .then(function(orders) {
                 var customerIdArray = Object.keys(orders);
 
-                console.log('Truck # ' + this.truckId + 'has pending orders: ');
+                console.log('Truck #' + this.truckId + ' has pending orders: ');
                 customerIdArray.forEach(function(id) {
                     console.log(orders[id]);
                     if (printFn) {

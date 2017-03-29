@@ -1,36 +1,3 @@
 {
-  "coffeeorders": [
-    {
-      "coffee": "tea",
-      "emailAddress": "diana@bignerdranch.com",
-      "size": "grande",
-      "flavor": "Caramel",
-      "strength": "13",
-      "id": "diana@bignerdranch.com"
-    },
-    {
-      "coffee": "coffee",
-      "emailAddress": "diana1@bignerdranch.com",
-      "size": "tall",
-      "flavor": "Caramel",
-      "strength": "40",
-      "id": "diana1@bignerdranch.com"
-    },
-    {
-      "coffee": "tea",
-      "emailAddress": "diana2@bignerdranch.com",
-      "size": "tall",
-      "flavor": "",
-      "strength": "30",
-      "id": "diana2@bignerdranch.com"
-    },
-    {
-      "coffee": "tea",
-      "emailAddress": "diana10@bignerdranch.com",
-      "size": "tall",
-      "flavor": "",
-      "strength": "30",
-      "id": "diana10@bignerdranch.com"
-    }
-  ]
+  "coffeeorders": []
 }
