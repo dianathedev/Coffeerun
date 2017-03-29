@@ -2,11 +2,19 @@
   "coffeeorders": [
     {
       "coffee": "test",
-      "emailAddress": "test@bignerdranch.com",
-      "size": "tall",
-      "flavor": "",
-      "strength": "30",
-      "id": "test@bignerdranch.com"
+      "emailAddress": "yeah@bignerdranch.com",
+      "size": "short",
+      "flavor": "almond",
+      "strength": "50",
+      "id": "yeah@bignerdranch.com"
+    },
+    {
+      "coffee": "caramel coffee",
+      "emailAddress": "diana@bignerdranch.com",
+      "size": "grande",
+      "flavor": "caramel",
+      "strength": "24",
+      "id": "diana@bignerdranch.com"
     }
   ]
 }

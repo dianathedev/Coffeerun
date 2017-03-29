@@ -26,7 +26,7 @@
                 customerIdArray.forEach(function(id) {
                     console.log(orders[id]);
                     if (printFn) {
-                      printFn(orders[id]);
+                        printFn(orders[id]);
                     }
                 }.bind(this));
             }.bind(this));
@@ -38,6 +38,11 @@
         var ordersArray = Object(this.db.getAll());
         return ordersArray;
 
+    };
+
+    Truck.prototype.createOrderTest = function(order) {
+        this.createOrder(order);
+        return Object.keys(this.db.data);
     };
 
     App.Truck = Truck;

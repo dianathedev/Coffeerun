@@ -56,6 +56,23 @@
         });
     };
 
+    FormHandler.prototype.addEmailInputHandler = function (fn, remoteDS) {
+        this.$formElement.on('blur', '[name="emailAddress"]', function (event) {
+            var emailAddress = event.target.value;
+            var message = '';
+            fn(emailAddress, remoteDS)
+            .then(function () {
+                if (App.validEmail) {
+                    event.target.setCustomValidity('');
+                } else {
+                    message = emailAddress + ' already has an order!';
+                    console.log(message);
+                    event.target.setCustomValidity(message);
+                }
+            });
+        });
+    };
+
     FormHandler.prototype.decafInputHandler = function(fn) {
         $('#strengthLevel').on('change', function(event) {
             var caffeineRating = $('#strengthLevel').val();
@@ -111,7 +128,6 @@
             }
         });
     };
-
 
     App.FormHandler = FormHandler;
     window.App = App;

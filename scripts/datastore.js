@@ -1,20 +1,21 @@
 (function(window) {
     'use strict';
     var App = window.App || {};
-    var Promise = window.Promise();
+    var Promise = window.Promise;
 
     function DataStore() {
         this.data = {};
     }
 
     function promiseResolvedWith(value) {
-        var promise = new Promise(function(resolve, reject) {
+        var promise = new Promise(function (resolve, reject) {
             resolve(value);
         });
         return promise;
     }
 
     DataStore.prototype.add = function(key, val) {
+        this.data[key] = val;
         return promiseResolvedWith(null);
     };
 
