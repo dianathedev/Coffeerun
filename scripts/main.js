@@ -5,7 +5,7 @@
     var SERVER_URL = 'http://localhost:3002/coffeeorders';
     var App = window.App;
     var Truck = App.Truck;
-    var DataStore = App.DataStore;
+    //var DataStore = App.DataStore;
     var RemoteDataStore = App.RemoteDataStore;
     var FormHandler = App.FormHandler;
     var Achievements = App.Achievements;
@@ -28,6 +28,6 @@
     formHandler.addInputHandler(Validation.isCompanyEmail);
     formHandler.addSliderHandler();
     formHandler.addAchievementHandler();
-    formHandler.decafInputHandler(Validation.isDecaf);;
+    formHandler.decafInputHandler(Validation.isDecaf);
     myTruck.printOrders(checkList.addRow.bind(checkList));
 })(window);

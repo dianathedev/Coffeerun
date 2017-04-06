@@ -8,7 +8,7 @@
     }
 
     function promiseResolvedWith(value) {
-        var promise = new Promise(function(resolve, reject) {
+        var promise = new Promise(function(resolve) {
             resolve(value);
         });
         return promise;
