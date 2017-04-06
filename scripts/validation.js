@@ -1,7 +1,6 @@
 (function(window) {
     'use strict';
     var App = window.App || {};
-    var $ = window.jQuery;
 
     var Validation = {
         isCompanyEmail: function(email) {
